@@ -9,7 +9,7 @@ window.title('Pypaint')
 window.geometry('992x700')
 window.minsize(992,700)
 window.maxsize(992,700)
-window.iconbitmap('pinceau.ico')
+window.iconbitmap('palette.ico')
 bg = '#B8CBD0'
 bg_titre = '#344D59'
 bg_boutton = '#344D59'
@@ -220,7 +220,7 @@ def titre_oeuvre():
     box_title = Toplevel(window)
     box_title.title("Pypaint")
     box_title.geometry("320x150")
-    box_title.iconbitmap('pinceau.ico')
+    box_title.iconbitmap('palette.ico')
     box_title.minsize(320, 150)
     box_title.maxsize(320, 150)
     box_title.config(bg=bg)
