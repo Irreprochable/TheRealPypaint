@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import ttk, messagebox
 from turtle import *
 import random
-import sys
 
 #Paramétrage de la fenêtre
 window = Tk()
@@ -226,7 +225,7 @@ def titre_oeuvre():
     box_title.maxsize(320, 150)
     box_title.config(bg=bg)
     mini_frame = Frame(box_title,bg=bg)
-    ordre = Label(mini_frame, text='Mettez donc un titre à votre chef-d\'oeuvre', font =('Montserrat', 10),bg=bg,fg=bg_titre)
+    ordre = Label(mini_frame, text='Mettez donc un titre à votre chef-d\'œuvre !', font =('Montserrat', 10),bg=bg,fg=bg_titre)
     ordre.grid(row=0,column=0,pady=10)
     a = StringVar()
     le_nom = Entry(mini_frame, width=30, textvariable=a,)
@@ -241,9 +240,12 @@ def titre_oeuvre():
     entrer.grid(row=2,column=0,pady=10)
     mini_frame.pack()
 
-
-
-
+def exit():
+    sortir = messagebox.askyesno('Exit','Voulez-vous quitter le logiciel ?')
+    if sortir == True:
+        window.destroy()
+    else:
+        pass
 
 Title = Label(window, text='Pypaint', font =('Montserrat', 40), bg =bg,fg=bg_titre)
 Title.place(x=15,y=590)
@@ -253,6 +255,8 @@ start_button = Button(frame1, text='Start',font=('Montserrat',20),bg =bg_boutton
 start_button.grid(row=0,column=0,padx=1,pady=10,ipadx=10)
 stop_button = Button(frame1, text='Stop',font=('Montserrat',20),bg =bg_boutton,fg='white',command=titre_oeuvre)
 stop_button.grid(row=1,column=0,padx=1,pady=10,ipadx=11)
+exit_button = Button(window, text='Exit',font=('Montserrat',20),bg='white',fg=bg_boutton,command=exit)
+exit_button.place(x=90,y=360,width=67)
 
 ###
 
